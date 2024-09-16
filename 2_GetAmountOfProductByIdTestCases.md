@@ -2,53 +2,58 @@
 
 ## **get_amount_of_product_by_id(searchKey)**
 
-returns the amount of the product matching the id
+The method searches the given searchKey which is the id of the product and returns the amount of the product matching the id.
 
-> Parameters:
->
-> > searchKey is the id of the product
-
-> Returns:
->
-> > returns the amount of product matching the searchKey name or null if no match is found
-
-For example:
-
-```json
-"amount": 100
+```js
+100;
 ```
 
-> Throws:
->
-> > If a parameter searchKey is missing, an exeption `'missing parameter'` is thrown
+If no match is found, the method returns `null`.
 
-## Test 1: get_amount_of_product_by_id from default data datastorage.json
+If a parameter searchKey is missing, an exeption `'missing parameter'` is thrown.
+
+All tests are using the default data.
 
 Create product storage with default data.
 
 ```js
 const storage = new ProductStorage(defaultData);
+```
+
+## Test 1: get_amount_of_product_by_id with id:2
+
+```js
 storage.get_amount_of_product_by_id(2);
 ```
 
 expect return
 
-```json
-150
+```js
+150;
 ```
 
-## Test 2: get_amount_of_product_by_id no match is found
+## Test 2: get_amount_of_product_by_id with id:4
+
+```js
+storage.get_amount_of_product_by_id(4);
+```
+
+expect return
+
+```js
+20;
+```
+
+## Test 3: get_amount_of_product_by_id no match is found
 
 ```js
 const storage = new ProductStorage(defaultData);
 storage.get_amount_of_product_by_id(6);
 ```
 
-expect return
+expect return `null`
 
-`null`
-
-## Test 3: searchKey is missing
+## Test 4: searchKey is missing
 
 ```js
 const storage = new ProductStorage(defaultData);
@@ -57,7 +62,7 @@ storage.get_amount_of_product_by_id();
 
 expect to throw an exception: `'missing parameter'`
 
-## Test 4: Wrong searchKey
+<!-- ## Test 4: Wrong searchKey
 
 ```js
 const storage = new ProductStorage(defaultData);
@@ -132,4 +137,4 @@ const storage = new ProductStorage(testData);
 storage.get_amount_of_product_by_id(2);
 ```
 
-expect return `null`
+expect return `null` -->
