@@ -34,11 +34,11 @@ storage.get_details(1);
 returns
 
 ```json
-"details": {
-      "model": "gold",
-      "comments": "no comments",
-      "consumption": "D"
-    }
+{
+  "model": "gold",
+  "comments": "no comments",
+  "consumption": "D"
+}
 ```
 
 ### Test 2: details of the product with id: 4
@@ -50,11 +50,11 @@ storage.get_details(4);
 returns
 
 ```json
- "details": {
-      "model": "VIP",
-      "comments": "no comments",
-      "consumption": "C"
-    }
+{
+  "model": "VIP",
+  "comments": "no comments",
+  "consumption": "C"
+}
 ```
 
 ### Test 3: no product matching searchKey is found
